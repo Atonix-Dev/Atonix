@@ -1,0 +1,169 @@
+
+{
+  "NAV": {
+    "APP_NAME": "Radio App",
+    "HOME": "Inicio",
+    "SEARCH": "Buscar",
+    "PLAYER": "Reproductor",
+    "LOGIN": "Iniciar Sesión",
+    "LOGOUT": "Salir",
+    "REGISTER": "Registrarse",
+    "HELLO": "Hola",
+    "SETTINGS": "Configuración"
+  },
+  "AUTH": {
+    "LOGIN": {
+      "TITLE": "Iniciar Sesión",
+      "SUBTITLE": "Accede a tu cuenta de Radio App",
+      "USERNAME_LABEL": "Nombre de usuario",
+      "USERNAME_PLACEHOLDER": "usuario123",
+      "PASSWORD_LABEL": "Contraseña",
+      "PASSWORD_PLACEHOLDER": "••••••••",
+      "REMEMBER_ME": "Recordarme",
+      "SUBMIT": "Iniciar Sesión",
+      "SUBMIT_LOADING": "Iniciando sesión...",
+      "NO_ACCOUNT": "¿No tienes una cuenta?",
+      "REGISTER_LINK": "Regístrate aquí",
+      "ERROR_USERNAME_REQUIRED": "El nombre de usuario es requerido",
+      "ERROR_USERNAME_INVALID": "Nombre de usuario inválido (3-20 caracteres alfanuméricos)",
+      "ERROR_PASSWORD_REQUIRED": "La contraseña es requerida",
+      "ERROR_PASSWORD_MIN": "La contraseña debe tener al menos 8 caracteres"
+    },
+    "REGISTER": {
+      "TITLE": "Crear Cuenta",
+      "SUBTITLE": "Únete a Radio App",
+      "ALIAS_LABEL": "Alias *",
+      "ALIAS_PLACEHOLDER": "tunombre",
+      "ALIAS_HINT": "Tu identificador único en la plataforma",
+      "USERNAME_LABEL": "Nombre de usuario *",
+      "USERNAME_PLACEHOLDER": "usuario123",
+      "EMAIL_LABEL": "Email (opcional)",
+      "EMAIL_PLACEHOLDER": "email@ejemplo.com",
+      "PASSWORD_LABEL": "Contraseña *",
+      "CONFIRM_PASSWORD_LABEL": "Confirmar Contraseña *",
+      "ACCEPT_TERMS": "Acepto los",
+      "TERMS_LINK": "Términos y Condiciones",
+      "SUBMIT": "Registrarse",
+      "SUBMIT_LOADING": "Registrando...",
+      "HAVE_ACCOUNT": "¿Ya tienes cuenta?",
+      "LOGIN_LINK": "Inicia sesión",
+      "ERROR_ALIAS_REQUIRED": "El alias es requerido",
+      "ERROR_ALIAS_INVALID": "Alias inválido (3-20 caracteres alfanuméricos)",
+      "ERROR_ALIAS_EXISTS": "Este alias ya está en uso",
+      "ERROR_USERNAME_REQUIRED": "Requerido",
+      "ERROR_USERNAME_INVALID": "3-20 caracteres alfanuméricos",
+      "ERROR_EMAIL_INVALID": "Email inválido",
+      "ERROR_PASSWORD_REQUIRED": "La contraseña es requerida",
+      "ERROR_PASSWORD_STRENGTH": "La contraseña debe tener:",
+      "ERROR_PASSWORD_MIN": "Mínimo 8 caracteres",
+      "ERROR_PASSWORD_UPPERCASE": "Al menos 1 mayúscula",
+      "ERROR_PASSWORD_LOWERCASE": "Al menos 1 minúscula",
+      "ERROR_PASSWORD_NUMBER": "Al menos 1 número",
+      "ERROR_PASSWORD_MISMATCH": "Las contraseñas no coinciden",
+      "ERROR_TERMS_REQUIRED": "Debes aceptar los términos"
+    },
+    "MESSAGES": {
+      "LOGIN_SUCCESS": "Login exitoso",
+      "REGISTER_SUCCESS": "Registro exitoso",
+      "LOGOUT_SUCCESS": "Sesión cerrada correctamente",
+      "INVALID_CREDENTIALS": "Credenciales inválidas",
+      "ALIAS_TAKEN": "El alias ya está en uso",
+      "USERNAME_EXISTS": "El nombre de usuario ya existe",
+      "EMAIL_EXISTS": "El email ya está registrado"
+    }
+  },
+  "HOME": {
+    "HERO": {
+      "TITLE": "Escucha Radio de Todo el Mundo",
+      "SUBTITLE": "Miles de estaciones de radio en vivo. Música, noticias, deportes y más. Todo gratis.",
+      "BTN_EXPLORE": "🎵 Explorar Estaciones",
+      "BTN_SEARCH": "🔍 Buscar Radios"
+    },
+    "FEATURES": {
+      "GLOBAL": {
+        "TITLE": "Radio Global",
+        "DESC": "Accede a estaciones de radio de más de 190 países alrededor del mundo."
+      },
+      "SEARCH": {
+        "TITLE": "Búsqueda Avanzada",
+        "DESC": "Encuentra fácilmente tus estaciones favoritas por país, género o nombre."
+      },
+      "PLAYER": {
+        "TITLE": "Reproductor Moderno",
+        "DESC": "Interfaz intuitiva y moderna para la mejor experiencia de escucha."
+      }
+    },
+    "FOOTER": {
+      "COPYRIGHT": "© 2024 Radio App. Todos los derechos reservados.",
+      "TERMS": "Términos",
+      "PRIVACY": "Privacidad",
+      "FAQ": "FAQ"
+    }
+  },
+  "SEARCH": {
+    "TITLE": "Buscador de Radios",
+    "BACK": "Volver",
+    "SEARCH_LABEL": "Buscar por nombre o género",
+    "SEARCH_PLACEHOLDER": "Ej: Rock, Jazz, Noticias...",
+    "COUNTRY_LABEL": "País (opcional)",
+    "COUNTRY_PLACEHOLDER": "Ej: Argentina, España...",
+    "TAG_LABEL": "Género (opcional)",
+    "TAG_PLACEHOLDER": "Ej: pop, rock, jazz...",
+    "BTN_SEARCH": "🔍 Buscar",
+    "BTN_SEARCHING": "Buscando...",
+    "BTN_CLEAR": "Limpiar",
+    "RESULTS": "Resultados",
+    "NO_RESULTS": "No se encontraron resultados"
+  },
+  "PLAYER": {
+    "NOW_PLAYING": "Reproduciendo ahora",
+    "PLAY": "Reproducir",
+    "PAUSE": "Pausar",
+    "STOP": "Detener",
+    "VOLUME": "Volumen",
+    "LOADING": "Cargando...",
+    "ERROR": "Error al reproducir",
+    "SELECT_STATION": "Selecciona una estación"
+  },
+  "LEGAL": {
+    "TERMS": "Términos y Condiciones",
+    "PRIVACY": "Política de Privacidad",
+    "FAQ": "Preguntas Frecuentes"
+  },
+  "NOT_FOUND": {
+    "TITLE": "404 - Página no encontrada",
+    "MESSAGE": "La página que buscas no existe",
+    "BTN_HOME": "Volver al inicio"
+  },
+  "COMMON": {
+    "SAVE": "Guardar",
+    "CANCEL": "Cancelar",
+    "EDIT": "Editar",
+    "DELETE": "Eliminar",
+    "CLOSE": "Cerrar",
+    "YES": "Sí",
+    "NO": "No",
+    "OK": "Ok",
+    "LOADING": "Cargando...",
+    "ERROR": "Error",
+    "SUCCESS": "Éxito",
+    "WARNING": "Advertencia",
+    "INFO": "Información",
+    "SEARCH": "Buscar",
+    "FILTER": "Filtrar",
+    "SORT": "Ordenar",
+    "RESET": "Restablecer"
+  },
+  "SETTINGS": {
+    "TITLE": "Configuración",
+    "LANGUAGE": "Idioma",
+    "LANGUAGE_ES": "Español",
+    "LANGUAGE_EN": "Inglés",
+    "THEME": "Tema",
+    "THEME_LIGHT": "Claro",
+    "THEME_DARK": "Oscuro",
+    "THEME_AUTO": "Automático",
+    "PREFERENCES": "Preferencias",
+    "ACCOUNT": "Cuenta"
+  }
+}

@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-spotify-black-highlight;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply m-0 p-0 box-border;
+    @apply bg-spotify-black text-spotify-white;
+    @apply font-sans antialiased;
+    @apply overflow-x-hidden;
+    background: linear-gradient(180deg, #0A0A0A 0%, #121212 100%);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  button {
+    @apply transition-all duration-300 ease-spotify;
+  }
+
+  input, textarea, select {
+    @apply bg-spotify-black-elevated border border-spotify-black-highlight;
+    @apply text-spotify-white placeholder-spotify-gray-subdued;
+    @apply rounded-md px-4 py-2;
+    @apply focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent;
+    @apply transition-all duration-300;
+  }
+
+  a {
+    @apply text-spotify-gray-subdued hover:text-spotify-white;
+    @apply transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-spotify-black-elevated/70 backdrop-blur-xl;
+    @apply border border-spotify-black-highlight/50;
+    @apply rounded-xl shadow-glass;
+  }
+
+  .glass-card-hover {
+    @apply glass-card;
+    @apply hover:bg-spotify-black-elevated/90 hover:border-accent/30;
+    @apply hover:shadow-glow-yellow hover:scale-105;
+    @apply transition-all duration-300 ease-spotify;
+  }
+
+  .btn-primary {
+    @apply bg-accent text-spotify-black font-semibold;
+    @apply px-6 py-3 rounded-full;
+    @apply hover:bg-accent-400 hover:scale-105;
+    @apply active:scale-95;
+    @apply transition-all duration-300 ease-spotify;
+    @apply shadow-lg hover:shadow-glow-yellow;
+  }
+
+  .btn-secondary {
+    @apply bg-spotify-black-elevated text-spotify-white font-semibold;
+    @apply px-6 py-3 rounded-full;
+    @apply border border-spotify-gray-subtle;
+    @apply hover:bg-spotify-black-highlight hover:border-accent;
+    @apply hover:scale-105 active:scale-95;
+    @apply transition-all duration-300 ease-spotify;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-spotify-gray-subdued font-semibold;
+    @apply px-6 py-3 rounded-full;
+    @apply hover:bg-spotify-black-highlight hover:text-spotify-white;
+    @apply transition-all duration-300 ease-spotify;
+  }
+
+  .btn-icon {
+    @apply w-10 h-10 flex items-center justify-center;
+    @apply rounded-full bg-transparent;
+    @apply text-spotify-gray-subdued hover:text-spotify-white;
+    @apply hover:bg-spotify-black-highlight hover:scale-110;
+    @apply active:scale-95;
+    @apply transition-all duration-300 ease-spotify;
+  }
+
+  .sidebar {
+    @apply fixed left-0 top-0 h-screen w-60;
+    @apply bg-spotify-black-base;
+    @apply border-r border-spotify-black-highlight;
+    @apply flex flex-col;
+    @apply z-40;
+  }
+
+  .sidebar-item {
+    @apply flex items-center gap-4 px-6 py-3;
+    @apply text-spotify-gray-subdued font-medium;
+    @apply hover:text-spotify-white;
+    @apply transition-colors duration-300;
+    @apply cursor-pointer;
+  }
+
+  .sidebar-item-active {
+    @apply sidebar-item;
+    @apply text-spotify-white bg-spotify-black-highlight;
+    @apply border-l-4 border-accent;
+  }
+
+  .player-bar {
+    @apply fixed bottom-0 left-0 right-0 h-20;
+    @apply bg-spotify-black-elevated/95 backdrop-blur-xl;
+    @apply border-t border-spotify-black-highlight;
+    @apply shadow-player;
+    @apply z-50;
+  }
+
+  .station-card {
+    @apply glass-card-hover;
+    @apply p-4 cursor-pointer;
+    @apply group;
+  }
+
+  .station-card-image {
+    @apply w-full aspect-square rounded-lg;
+    @apply object-cover;
+    @apply group-hover:shadow-glow-yellow;
+    @apply transition-all duration-300;
+  }
+
+  .progress-bar {
+    @apply w-full h-1 bg-spotify-gray-subtle rounded-full;
+    @apply overflow-hidden cursor-pointer;
+  }
+
+  .progress-bar-fill {
+    @apply h-full bg-accent rounded-full;
+    @apply transition-all duration-100;
+  }
+
+  .volume-slider {
+    @apply w-full h-1 bg-spotify-gray-subtle rounded-full;
+    @apply appearance-none cursor-pointer;
+  }
+
+  .volume-slider::-webkit-slider-thumb {
+    @apply appearance-none w-3 h-3 bg-accent rounded-full;
+    @apply hover:scale-125;
+    @apply transition-transform duration-200;
+  }
+
+  .skeleton {
+    @apply animate-pulse bg-spotify-black-highlight rounded;
+  }
+
+  .skeleton-text {
+    @apply skeleton h-4 w-full mb-2;
+  }
+
+  .skeleton-circle {
+    @apply skeleton rounded-full;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #535353 #1A1A1A;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-spotify-black-elevated;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-spotify-gray-base rounded-full;
+    @apply hover:bg-spotify-gray-subdued;
+  }
+
+  .focus-visible-yellow {
+    @apply focus-visible:outline-none focus-visible:ring-2;
+    @apply focus-visible:ring-accent focus-visible:ring-offset-2;
+    @apply focus-visible:ring-offset-spotify-black;
+  }
+}
+
+@layer utilities {
+  .text-gradient-yellow {
+    @apply bg-gradient-to-r from-accent to-accent-400;
+    @apply bg-clip-text text-transparent;
+  }
+
+  .bg-gradient-dark {
+    background: linear-gradient(180deg, #0A0A0A 0%, #121212 50%, #1A1A1A 100%);
+  }
+
+  .bg-gradient-yellow {
+    background: linear-gradient(135deg, #F5C518 0%, #FFD93D 100%);
+  }
+
+  .backdrop-blur-glass {
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+  }
+
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .safe-left {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .safe-right {
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    @apply w-16;
+  }
+
+  .player-bar {
+    @apply h-16;
+  }
+}

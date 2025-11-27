@@ -1,0 +1,18 @@
+/* Custom slider styles */
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #9333ea 0%, #3b82f6 100%);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #9333ea 0%, #3b82f6 100%);
+  cursor: pointer;
+  border: none;
+}

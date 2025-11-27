@@ -1,0 +1,52 @@
+<div class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900">
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <div class="mb-8">
+      <a routerLink="/home" class="text-blue-400 hover:text-blue-300 flex items-center mb-4">
+        <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Volver al inicio
+      </a>
+      <h1 class="text-4xl font-bold text-white mb-2">Preguntas Frecuentes (FAQ)</h1>
+      <p class="text-gray-400">Encuentra respuestas a las preguntas más comunes sobre Radio App</p>
+    </div>
+
+    <div class="space-y-4">
+      <div *ngFor="let faq of faqs; let i = index" 
+           class="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl border border-white border-opacity-20 overflow-hidden transition-all">
+        <button 
+          (click)="toggleFaq(faq)"
+          class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white hover:bg-opacity-5 transition">
+          <h3 class="text-lg font-semibold text-white pr-4">{{ faq.question }}</h3>
+          <svg 
+            class="h-6 w-6 text-purple-400 flex-shrink-0 transform transition-transform"
+            [class.rotate-180]="faq.isOpen"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div *ngIf="faq.isOpen" 
+             class="px-6 pb-4 text-gray-300 leading-relaxed border-t border-white border-opacity-10 pt-4 animate-fadeIn">
+          {{ faq.answer }}
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-center">
+      <h2 class="text-2xl font-bold text-white mb-4">¿No encontraste lo que buscabas?</h2>
+      <p class="text-white text-opacity-90 mb-6">
+        Estamos aquí para ayudarte. No dudes en contactarnos.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a routerLink="/legal/terms" 
+           class="bg-white hover:bg-gray-100 text-purple-900 px-6 py-3 rounded-lg font-medium transition">
+          Términos y Condiciones
+        </a>
+        <a routerLink="/legal/privacy" 
+           class="bg-white bg-opacity-10 hover:bg-opacity-20 backdrop-blur-lg text-white px-6 py-3 rounded-lg font-medium border border-white border-opacity-30 transition">
+          Política de Privacidad
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

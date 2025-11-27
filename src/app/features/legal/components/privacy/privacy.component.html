@@ -1,0 +1,157 @@
+<div class="min-h-screen bg-gradient-to-br from-gray-900 via-indigo-900 to-purple-900">
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <div class="mb-8">
+      <a routerLink="/home" class="text-blue-400 hover:text-blue-300 flex items-center mb-4">
+        <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Volver al inicio
+      </a>
+      <h1 class="text-4xl font-bold text-white mb-2">Política de Privacidad</h1>
+      <p class="text-gray-400">Última actualización: {{ lastUpdated }}</p>
+    </div>
+
+    <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 border border-white border-opacity-20 prose prose-invert max-w-none">
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold text-white mb-4">1. Introducción</h2>
+        <p class="text-gray-300 leading-relaxed">
+          En Radio App, respetamos tu privacidad y nos comprometemos a proteger tus datos personales. Esta Política de Privacidad explica cómo recopilamos, usamos, compartimos y protegemos tu información cuando utilizas nuestra aplicación.
+        </p>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold text-white mb-4">2. Información que Recopilamos</h2>
+        <h3 class="text-xl font-semibold text-white mb-3">2.1 Información que Proporcionas</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4 mb-4">
+          <li><strong>Registro de cuenta:</strong> Nombre de usuario y opcionalmente email</li>
+          <li><strong>Preferencias:</strong> Estaciones favoritas, configuraciones de la aplicación</li>
+          <li><strong>Interacciones:</strong> Historial de estaciones reproducidas</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-white mb-3">2.2 Información Recopilada Automáticamente</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+          <li><strong>Datos de uso:</strong> Estaciones escuchadas, tiempo de reproducción</li>
+          <li><strong>Datos técnicos:</strong> Tipo de navegador, sistema operativo, dirección IP</li>
+          <li><strong>Cookies:</strong> Para mejorar la experiencia del usuario</li>
+        </ul>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold text-white mb-4">3. Cómo Utilizamos tu Información</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Utilizamos la información recopilada para:
+        </p>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+          <li>Proporcionar y mantener el servicio</li>
+          <li>Personalizar tu experiencia de usuario</li>
+          <li>Mejorar nuestro servicio y desarrollar nuevas funciones</li>
+          <li>Comunicarnos contigo sobre actualizaciones y cambios</li>
+          <li>Detectar y prevenir uso fraudulento o abusivo</li>
+          <li>Cumplir con obligaciones legales</li>
+        </ul>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold text-white mb-4">4. Compartir Información</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          No vendemos ni alquilamos tu información personal. Podemos compartir información en las siguientes circunstancias:
+        </p>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+          <li><strong>Proveedores de servicios:</strong> Con empresas que nos ayudan a operar la aplicación</li>
+          <li><strong>APIs de terceros:</strong> Con Radio Browser API para obtener información de estaciones</li>
+          <li><strong>Requisitos legales:</strong> Cuando sea requerido por ley o para proteger derechos</li>
+          <li><strong>Con tu consentimiento:</strong> En cualquier otra situación con tu permiso explícito</li>
+        </ul>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold text-white mb-4">5. Almacenamiento de Datos</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Tus datos se almacenan localmente en tu navegador mediante localStorage. Esto significa que tus datos permanecen en tu dispositivo y no se envían a servidores externos, excepto las solicitudes necesarias a la API de Radio Browser para obtener las estaciones de radio.
+        </p>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold text-white mb-4">6. Seguridad de Datos</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Implementamos medidas de seguridad para proteger tu información:
+        </p>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+          <li>Encriptación de datos sensibles</li>
+          <li>Sanitización de inputs para prevenir ataques XSS</li>
+          <li>Protección contra CSRF</li>
+          <li>Validación de datos en cliente y servidor</li>
+          <li>Acceso limitado a datos personales</li>
+        </ul>
+        <p class="text-gray-300 leading-relaxed mt-4">
+          Sin embargo, ningún método de transmisión por Internet o almacenamiento electrónico es 100% seguro.
+        </p>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold text-white mb-4">7. Tus Derechos</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Tienes derecho a:
+        </p>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+          <li><strong>Acceso:</strong> Solicitar una copia de tus datos personales</li>
+          <li><strong>Rectificación:</strong> Corregir datos inexactos o incompletos</li>
+          <li><strong>Eliminación:</strong> Solicitar la eliminación de tus datos</li>
+          <li><strong>Portabilidad:</strong> Recibir tus datos en un formato estructurado</li>
+          <li><strong>Oposición:</strong> Oponerte al procesamiento de tus datos</li>
+          <li><strong>Limitación:</strong> Solicitar la limitación del procesamiento</li>
+        </ul>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold text-white mb-4">8. Cookies y Tecnologías Similares</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Utilizamos las siguientes tecnologías:
+        </p>
+        <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+          <li><strong>LocalStorage:</strong> Para guardar preferencias y datos de sesión</li>
+          <li><strong>SessionStorage:</strong> Para datos temporales durante tu sesión</li>
+        </ul>
+        <p class="text-gray-300 leading-relaxed mt-4">
+          Puedes controlar estas tecnologías a través de la configuración de tu navegador.
+        </p>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold text-white mb-4">9. Privacidad de Menores</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Nuestra aplicación es para usuarios de todas las edades. No recopilamos intencionalmente información personal de menores de 13 años sin el consentimiento de los padres. Si descubrimos que hemos recopilado información de un menor sin consentimiento, la eliminaremos de inmediato.
+        </p>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold text-white mb-4">10. Cambios a esta Política</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Podemos actualizar esta Política de Privacidad periódicamente. Te notificaremos sobre cambios significativos publicando la nueva política en la aplicación y actualizando la fecha de "última actualización".
+        </p>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold text-white mb-4">11. Contacto</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Si tienes preguntas sobre esta Política de Privacidad, visita nuestra página de <a routerLink="/legal/faq" class="text-blue-400 hover:text-blue-300">Preguntas Frecuentes</a> o contáctanos directamente.
+        </p>
+      </section>
+    </div>
+
+    <div class="mt-8 flex justify-between">
+      <a routerLink="/legal/terms" class="text-blue-400 hover:text-blue-300 flex items-center">
+        <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Términos y Condiciones
+      </a>
+      <a routerLink="/legal/faq" class="text-blue-400 hover:text-blue-300 flex items-center">
+        Preguntas Frecuentes
+        <svg class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
