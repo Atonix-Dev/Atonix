@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as jwt from 'jsonwebtoken';
+import * as CryptoJS from 'crypto-js';
 
 /**
  * JWT Token Payload Interface
@@ -13,16 +13,16 @@ export interface TokenPayload {
 }
 
 /**
- * Enhanced JWT Service with Real JWT Implementation
+ * Enhanced JWT Service with Browser-Compatible Implementation
  *
  * Features:
- * - Real JWT token generation using jsonwebtoken library
- * - HS256 algorithm for signing
+ * - JWT-style token generation using HMAC-SHA256
  * - Token verification with signature validation
  * - Automatic expiration handling (7 days)
+ * - Browser-compatible (uses crypto-js)
  *
- * Note: In production, move the secret to environment variables
- * and use backend-only JWT generation
+ * Note: This is a browser-compatible implementation. In a real production app,
+ * JWT generation and verification should happen on the backend.
  */
 @Injectable({
   providedIn: 'root'
@@ -35,26 +35,34 @@ export class JwtService {
   private readonly JWT_SECRET = 'radio-app-secret-key-change-in-production-2024';
 
   /**
-   * Generate JWT token with signature
+   * Generate JWT-style token with HMAC signature
    * @param payload - User data to encode
-   * @returns string - Signed JWT token
+   * @returns string - Signed token
    */
   generateToken(payload: { userId: string; username: string; role: 'user' | 'admin' | 'guest' }): string {
     try {
-      const expiresIn = `${this.TOKEN_EXPIRY_DAYS}d`;
+      const now = Math.floor(Date.now() / 1000);
+      const exp = now + (this.TOKEN_EXPIRY_DAYS * 24 * 60 * 60);
 
-      const token = jwt.sign(
-        payload,
-        this.JWT_SECRET,
-        {
-          algorithm: 'HS256',
-          expiresIn: expiresIn,
-          issuer: 'radio-app',
-          audience: 'radio-app-users'
-        }
-      );
+      const fullPayload: TokenPayload = {
+        ...payload,
+        iat: now,
+        exp: exp
+      };
 
-      return token;
+      // Create JWT-like structure: header.payload.signature
+      const header = { alg: 'HS256', typ: 'JWT' };
+      const headerB64 = this.base64UrlEncode(JSON.stringify(header));
+      const payloadB64 = this.base64UrlEncode(JSON.stringify(fullPayload));
+
+      const signature = CryptoJS.HmacSHA256(
+        `${headerB64}.${payloadB64}`,
+        this.JWT_SECRET
+      ).toString(CryptoJS.enc.Base64);
+
+      const signatureB64 = this.base64UrlEncode(signature);
+
+      return `${headerB64}.${payloadB64}.${signatureB64}`;
     } catch (error) {
       console.error('Error generating token:', error);
       throw new Error('Failed to generate authentication token');
@@ -68,21 +76,38 @@ export class JwtService {
    */
   verifyToken(token: string): TokenPayload | null {
     try {
-      const decoded = jwt.verify(token, this.JWT_SECRET, {
-        algorithms: ['HS256'],
-        issuer: 'radio-app',
-        audience: 'radio-app-users'
-      }) as TokenPayload;
-
-      return decoded;
-    } catch (error) {
-      if (error instanceof jwt.TokenExpiredError) {
-        console.warn('Token expired');
-      } else if (error instanceof jwt.JsonWebTokenError) {
-        console.error('Invalid token:', error.message);
-      } else {
-        console.error('Token verification error:', error);
+      const parts = token.split('.');
+      if (parts.length !== 3) {
+        return null;
       }
+
+      const [headerB64, payloadB64, signatureB64] = parts;
+
+      // Verify signature
+      const expectedSignature = CryptoJS.HmacSHA256(
+        `${headerB64}.${payloadB64}`,
+        this.JWT_SECRET
+      ).toString(CryptoJS.enc.Base64);
+
+      const expectedSignatureB64 = this.base64UrlEncode(expectedSignature);
+
+      if (signatureB64 !== expectedSignatureB64) {
+        console.error('Invalid token signature');
+        return null;
+      }
+
+      // Decode payload
+      const payload = JSON.parse(this.base64UrlDecode(payloadB64)) as TokenPayload;
+
+      // Check expiration
+      if (payload.exp && payload.exp < Math.floor(Date.now() / 1000)) {
+        console.warn('Token expired');
+        return null;
+      }
+
+      return payload;
+    } catch (error) {
+      console.error('Token verification error:', error);
       return null;
     }
   }
@@ -94,8 +119,14 @@ export class JwtService {
    */
   decodeToken(token: string): TokenPayload | null {
     try {
-      const decoded = jwt.decode(token) as TokenPayload;
-      return decoded;
+      const parts = token.split('.');
+      if (parts.length !== 3) {
+        return null;
+      }
+
+      const payloadB64 = parts[1];
+      const payload = JSON.parse(this.base64UrlDecode(payloadB64)) as TokenPayload;
+      return payload;
     } catch (error) {
       console.error('Error decoding token:', error);
       return null;
@@ -170,5 +201,37 @@ export class JwtService {
     const { iat, exp, ...userPayload } = payload;
 
     return this.generateToken(userPayload as { userId: string; username: string; role: 'user' | 'admin' | 'guest' });
+  }
+
+  /**
+   * Base64 URL encode
+   */
+  private base64UrlEncode(str: string): string {
+    return str
+      .replace(/\+/g, '-')
+      .replace(/\//g, '_')
+      .replace(/=/g, '');
+  }
+
+  /**
+   * Base64 URL decode
+   */
+  private base64UrlDecode(str: string): string {
+    // Add padding
+    let output = str.replace(/-/g, '+').replace(/_/g, '/');
+    switch (output.length % 4) {
+      case 0:
+        break;
+      case 2:
+        output += '==';
+        break;
+      case 3:
+        output += '=';
+        break;
+      default:
+        throw new Error('Invalid base64 string');
+    }
+
+    return CryptoJS.enc.Base64.parse(output).toString(CryptoJS.enc.Utf8);
   }
 }

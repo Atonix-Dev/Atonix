@@ -3,9 +3,6 @@
  * All interfaces and types should be imported from this file
  */
 
-// Legacy export (for backward compatibility)
-export * from './interfaces';
-
 // Radio Station Models
 export * from './radio.interface';
 
@@ -17,3 +14,6 @@ export * from './player.interface';
 
 // API Models
 export * from './api.interface';
+
+// Legacy exports for backward compatibility
+export type { Radio, StationFilter } from './interfaces';

@@ -98,7 +98,7 @@ export class RadioService {
    * @returns Observable<RadioStation[]>
    */
   getStationsByCountry(countryCode: string): Observable<RadioStation[]> {
-    return this.fetchStations({ countrycode: countryCode });
+    return this.fetchStations({ country: countryCode });
   }
 
   /**

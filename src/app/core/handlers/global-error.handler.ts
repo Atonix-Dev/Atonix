@@ -52,7 +52,7 @@ export class GlobalErrorHandler implements ErrorHandler {
     }
 
     if (error.status >= 500) {
-      return `Server error (${error.status}). Please try again later.';
+      return `Server error (${error.status}). Please try again later.`;
     }
 
     if (error.status === 404) {
