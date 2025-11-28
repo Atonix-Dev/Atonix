@@ -653,10 +653,10 @@ copies or substantial portions of the Software.
 
 ## 📞 Contacto
 
-**NaktoG**
+**Atonix**
 
-- GitHub: [@NaktoG](https://github.com/NaktoG)
-- Project Link: [https://github.com/NaktoG/radio-app](https://github.com/NaktoG/radio-app)
+- GitHub: [@Atonix-Dev](https://github.com/Atonix-Dev)
+- Project Link: [https://github.com/Atonix-Dev/Atonix](https://github.com/Atonix-Dev/Atonix)
 
 ---
 
@@ -673,7 +673,7 @@ copies or substantial portions of the Software.
 
 **[⬆ Volver arriba](#-radio-app---streaming-de-radio-mundial)**
 
-Hecho con ❤️ y ☕ por [NaktoG](https://github.com/NaktoG)
+Hecho con ❤️ y ☕ por [Atonix](https://github.com/Atonix-Dev)
 
 ⭐ Si te gusta este proyecto, no olvides darle una estrella ⭐
 
